@@ -58,7 +58,7 @@ class ContactService {
             { $set: update },
             {returnDocument: "after" }
         );
-        return result.value;
+        return result;
     };
 
     async delete(id) {
@@ -66,7 +66,7 @@ class ContactService {
             _id: ObjectId.isValid(id) ? new ObjectId(id) : null,
         });
 
-        return result.value;
+        return result;
     };
 
     async findFavorite(){
